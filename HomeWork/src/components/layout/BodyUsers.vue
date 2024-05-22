@@ -146,7 +146,7 @@ export default {
   methods:{
   deleteUser(id) {
       Swal.fire({
-        title: "Muốn xóa sản phẩm?",
+        title: "Muốn xóa người dùng?",
         text: "Bạn chắc chắn chứ?",
         icon: "question",
         showCancelButton: true,

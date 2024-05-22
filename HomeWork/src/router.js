@@ -8,7 +8,7 @@ import store from "@/store/index.js";
 const router = createRouter({
     history: createWebHistory(),
     routes:[
-        {path:'/', redirect:'page'},
+        {path:'/', redirect:'auth'},
         {path:'/page',component:Page},
         {path:'/products', component:BodyProducts, meta: { requiresAuth: true }},
         {path:'/users', component:BodyUsers, meta: { requiresAuth: true }},

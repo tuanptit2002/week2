@@ -2,9 +2,9 @@
 
 <template>
   <div style="display: flex; background-color: #F7F8FA">
-  <nav-page style="margin-right: 16px; background-color: #FFFFFF"></nav-page>
+  <nav-page style="margin-right: 16px; background-color: #FFFFFF" v-if="getCheck"></nav-page>
   <div style="height: 1024px;" >
-    <the-header ></the-header>
+    <the-header v-if="getCheck"></the-header>
     <router-view></router-view>
   </div>
 
@@ -19,7 +19,18 @@ import BodyUsers from "@/components/layout/BodyUsers.vue";
 import BodyProducts from "@/components/layout/BodyProducts.vue";
 
 export default defineComponent({
-  components: {BodyProducts, BodyUsers, TheHeader, Login, NavPage,}
+  components: {BodyProducts, BodyUsers, TheHeader, Login, NavPage,},
+  data(){
+   return{
+     check:''
+   }
+  },
+  computed:{
+    getCheck(){
+      this.check = this.$store.getters.token;
+      return this.check;
+    }
+  }
 })
 </script>
 <style scoped>

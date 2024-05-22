@@ -67,10 +67,12 @@ export default {
             context.dispatch('autoLogout');
         }, expiresIn);
 
-        context.commit('setUser', {
-            token: responseData.idToken,
-            userId: responseData.localId
-        });
+        if(mode ==='login'){
+            context.commit('setUser', {
+                token: responseData.idToken,
+                userId: responseData.localId
+            });
+        }
 
     },
     tryLogin(context) {

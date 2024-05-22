@@ -20,7 +20,8 @@ const store = createStore({
         },
         isProduct(state){
             return state.isProduct
-        }
+        },
+
     },
     actions:{
         setIsClick(context, data){
