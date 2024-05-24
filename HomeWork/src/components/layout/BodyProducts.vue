@@ -132,6 +132,9 @@ export default {
     },
     totalProducts(val){
       this.products = this.$store.getters['products/products'].slice(0, 10);
+    },
+    checkProduct(val){
+      if(!val) this.product = null;
     }
   },
   computed: {
@@ -152,6 +155,7 @@ export default {
   },
   methods: {
     async editProduct(id) {
+      console.log(id)
       console.log("edit")
       this.checkProduct = true;
       this.product = await this.$store.getters['products/getById'](id);

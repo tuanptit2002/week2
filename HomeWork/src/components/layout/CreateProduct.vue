@@ -9,8 +9,8 @@
         <div class="form-product">
           <form @submit.prevent = 'createProductOrUpdate'>
           <div class="title">
-            <p style="padding-top: 12px" v-if="this.dataProduct == null">Tạo mới sản phẩm</p>
-            <p style="padding-top: 10px" v-else="this.dataProduct">Cập nhật sản phẩm</p>
+            <p style="padding-top: 12px" v-if="dataProduct == null">Tạo mới sản phẩm</p>
+            <p style="padding-top: 10px" v-else="dataProduct">Cập nhật sản phẩm</p>
           </div>
           <div class="body-new">
             <div class="input" style="margin-bottom: 16px">
@@ -62,7 +62,7 @@
                     border-radius: 6px;
                      border: 1px solid rgba(70, 79, 96, 0.16);
                      font-family: 'Public Sans';
-                       color: #FFFFFF" type="submit" v-if="this.dataProduct == null">Tạo mới</button>
+                       color: #FFFFFF" type="submit" v-if="dataProduct == null">Tạo mới</button>
                     <button style="width: 100%;
                     height: 100%;
                     background-color: #0F60FF;
@@ -90,6 +90,7 @@ export default {
     return {
       dialog: true,
       product:{
+        id:'',
         name:'',
         price:'',
         count:'',
@@ -110,7 +111,17 @@ export default {
 
   },
   computed:{
-
+        dataNew(){
+          // this.product.id = this.dataProduct.id;
+          // this.product.name = this.dataProduct.name;
+          // this.product.price = this.dataProduct.price;
+          // this.product.count = this.dataProduct.count;
+          // this.product.description = this.dataProduct.description;
+          // this.product.image = this.dataProduct.image;
+          // return this.product;
+          const productNew = this.dataProduct;
+          return productNew
+        }
   },
   methods:{
     createProductOrUpdate() {
@@ -189,6 +200,7 @@ export default {
   border: none;
   outline: none;
   border-radius: 6px;
+  padding: 5px;
 }
 .input-description{
   width: 400px;

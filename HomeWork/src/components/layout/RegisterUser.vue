@@ -182,6 +182,7 @@ export default {
   border-radius: 6px;
   border: none;
   outline: none;
+  padding: 5px;
 }
 
 .form-input label {

@@ -122,6 +122,9 @@ export default {
         this.users = tmp.splice(index-10,index)
         console.log(this.users)
       }
+    },
+    checkUser(val){
+      if(!val) this.user = null;
     }
   },
   computed:{
