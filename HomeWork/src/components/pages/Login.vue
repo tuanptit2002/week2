@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="submitForm" style="display: flex; justify-content: center; align-items: center">
   <div class="login">
 
     <div class="header-line">
@@ -95,11 +95,12 @@ export default {
 
 <style scoped>
 .login{
+  margin-top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 426px;
   height: 476px;
-  margin-top: 119px;
-  margin-left: 507px;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }

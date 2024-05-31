@@ -1,9 +1,10 @@
 
 
-<template>
-  <div style="display: flex; background-color: #F7F8FA">
+<template >
+  <div style="display: flex; background-color: #F7F8FA; align-items: center; justify-content: center">
+
   <nav-page style="margin-right: 16px; background-color: #FFFFFF" v-if="getCheck"></nav-page>
-  <div style="height: 1024px;" >
+  <div style="height: 1024px;">
     <the-header v-if="getCheck"></the-header>
     <router-view></router-view>
   </div>
